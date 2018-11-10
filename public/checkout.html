@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Shop</title>
+    <link rel="stylesheet" href="/css/materialize.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+
+  <body class="row">
+    <!-- Start Navbar -->
+    <div class="navbar-fixed">
+      <nav class="deep-orange darken-4">
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo left main-nav-content" style="padding-left: 20px"><i class="material-icons">store</i>My Shop</a>
+          <ul class="right main-nav-content">
+            <li><a href="" id="search-icon"><i class="material-icons">search</i></a></li>
+            <li><a href="/login.html"><i class="material-icons">account_circle</i></a></li>
+          </ul>
+          <form id="search-form" class="hide">
+            <div class="input-field">
+              <input id="search" type="search" required>
+              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              <i class="material-icons" id="close-search">close</i>
+            </div>
+          </form>
+        </div>
+      </nav>
+    </div>
+    <!-- End Navbar -->
+
+    <div class="container col m6 offset-m3 s12 section">
+      <br>
+      <h4>Checkout</h4>
+      <!-- Start Product Info -->
+      <div class="row">
+        <div class="col m2 s4">
+          <img src="/images/g.jpg" width="100%">
+        </div>
+        <div class="col m8 s8">
+          <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h5>
+          <h6><strong>P 100.00</strong></h6>
+        </div>
+        <div class="col m2 s12">
+          <input type="number" name="quanity" min="1" value="1">
+          <input type="text" value="Total: P 2000.00" disabled>
+        </div>
+      </div>
+      <!-- End Product Info -->
+
+      <!-- Start Delivery Address -->
+      <h5>Address and Contact Information</h5>
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="John" id="first_name" type="text" class="validate" name="first_name">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="Doe" id="last_name" type="text" class="validate" name="last_name">
+          <label for="last_name">Last Name</label>
+        </div>
+        <div class="input-field col s12">
+          <input placeholder="Address" id="address" type="text" class="validate" name="address">
+          <label for="address">Complete Address</label>
+        </div>
+        <div class="input-field col s12">
+          <input placeholder="+631234567890" id="contact" type="text" class="validate" name="contact">
+          <label for="contact">Contact Number</label>
+        </div>
+      </div>
+      <!-- End Delivery Address -->
+
+      <!-- Start Pay Button -->
+      <div class="center-align">
+        <a class="waves-effect waves-light btn-large amber darken-4 valign-wrapper"><i><img src="/images/ppcom.png" height="100%" alt=""></i></a>
+      </div>
+      <!-- End Pay Button -->
+
+    </div>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/materialize.min.js"></script>
+    <script src="/js/nav.js"></script>
+  </body>
+</html>

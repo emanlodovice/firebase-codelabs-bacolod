@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Shop</title>
+    <link rel="stylesheet" href="/css/materialize.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+
+  <body class="row">
+    <!-- Start Navbar -->
+    <div class="navbar-fixed">
+      <nav class="deep-orange darken-4">
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo left main-nav-content" style="padding-left: 20px"><i class="material-icons">store</i>My Shop</a>
+          <ul class="right main-nav-content">
+            <li><a href="" id="search-icon"><i class="material-icons">search</i></a></li>
+            <li><a href=""><i class="material-icons">account_circle</i></a></li>
+          </ul>
+          <form id="search-form" class="hide">
+            <div class="input-field">
+              <input id="search" type="search" required>
+              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              <i class="material-icons" id="close-search">close</i>
+            </div>
+          </form>
+        </div>
+      </nav>
+    </div>
+    <!-- End Navbar -->
+
+    <div class="container col m8 offset-m2 s12 section">
+      <br>
+      <div class="center-align">
+        <h4>Add Product</h4>
+      </div>
+
+      <div class="row">
+        <!-- Start Image Section -->
+        <div class="col m5 s12">
+          <img src="/images/g.jpg" width="100%">
+          <div class="center-align">
+            <label for="image" class="btn waves-effect waves-light">
+              Upload <i class="material-icons right">add_a_photo</i>
+            </label>
+            <input type="file" id="image" class="hide">
+          </div>
+        </div>
+        <!-- End Image Section -->
+
+        <!-- Start About Section -->
+        <div class="col m7 s12">
+          <form action="" class="col s12">
+            <div class="input-field col s12">
+              <input id="name" type="text" class="validate">
+              <label for="name">Name</label>
+            </div>
+            <div class="input-field col s12">
+              <textarea name="description" id="description" class="materialize-textarea"></textarea>
+              <label for="description">Description</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="cost" type="number" class="validate" step="1" min="0">
+              <label for="cost">Price</label>
+            </div>
+          </form>
+        </div>
+        <!-- End About Section -->
+      </div>
+
+      <div class="center-align">
+        <a class="waves-effect waves-light btn-large teal darken-2" href="/checkout.html"><i class="material-icons left">add_shopping_cart</i>Create</a>
+      </div>
+    </div>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/materialize.min.js"></script>
+    <script src="/js/nav.js"></script>
+  </body>
+</html>
