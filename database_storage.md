@@ -15,3 +15,7 @@
         }
     }
     ```
+
+
+# Setup Storage
+1. Go to the storage tab in the firebase console

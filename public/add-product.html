@@ -19,7 +19,7 @@
           <a href="/" class="brand-logo left main-nav-content" style="padding-left: 20px"><i class="material-icons">store</i>My Shop</a>
           <ul class="right main-nav-content">
             <li><a href="" id="search-icon"><i class="material-icons">search</i></a></li>
-            <li><a href=""><i class="material-icons">account_circle</i></a></li>
+            <li><a href="/login.html" id="nav-user"><i class="material-icons">account_circle</i></a></li>
           </ul>
           <form id="search-form" class="hide">
             <div class="input-field">
@@ -38,16 +38,16 @@
       <div class="center-align">
         <h4>Add Product</h4>
       </div>
-      <form action="" class="col s12">
+      <form action="" class="col s12" id="product-form">
         <div class="row">
           <!-- Start Image Section -->
           <div class="col m5 s12">
-            <img src="/images/g.jpg" width="100%">
+            <img src="/images/g.jpg" width="100%" id="product-preview">
             <div class="center-align">
               <label for="image" class="btn waves-effect waves-light">
                 Upload <i class="material-icons right">add_a_photo</i>
               </label>
-              <input type="file" id="image" class="hide">
+              <input type="file" id="image" class="hide" accept="image/*"">
             </div>
           </div>
           <!-- End Image Section -->
@@ -67,6 +67,8 @@
                 <input id="cost" type="number" class="validate" step="1" min="0">
                 <label for="cost">Price</label>
               </div>
+
+              <input type="hidden" id="imageUrl">
             </div>
           </div>
         </div>
@@ -81,6 +83,7 @@
     <script src="/js/jquery.js"></script>
     <script src="/js/materialize.min.js"></script>
     <script src="/js/nav.js"></script>
+    <script src="/js/firestore-config.js"></script>
     <script src="/js/add-product.js"></script>
   </body>
 </html>
