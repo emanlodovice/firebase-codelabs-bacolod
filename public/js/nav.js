@@ -11,6 +11,20 @@ function handleNav() {
         $('.main-nav-content').removeClass('hide');
         $('#search-form').addClass('hide');
     });
+
+    $('nav').on('click', '.logout', function(e) {
+        e.preventDefault();
+        firebase.auth().signOut().then(function() {
+            window.location = '/login.html'
+        });
+    });
 }
+
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        $('#nav-user').addClass('logout').html('<img src=" ' + user.photoURL + '" width="30px" style="margin-top: 18px">');
+    }
+    $(window).trigger('auth', user);
+});
 
 $(document).ready(handleNav);

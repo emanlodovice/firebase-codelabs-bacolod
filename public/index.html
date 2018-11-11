@@ -6,6 +6,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script src="/js/firebase-config.js"></script>
   </head>
 
   <body class="row">
@@ -16,7 +18,7 @@
           <a href="/" class="brand-logo left main-nav-content" style="padding-left: 20px"><i class="material-icons">store</i>My Shop</a>
           <ul class="right main-nav-content">
             <li><a href="" id="search-icon"><i class="material-icons">search</i></a></li>
-            <li><a href="/login.html"><i class="material-icons">account_circle</i></a></li>
+            <li><a href="/login.html" id="nav-user"><i class="material-icons">account_circle</i></a></li>
           </ul>
           <form id="search-form" class="hide">
             <div class="input-field">

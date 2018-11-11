@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
     <script src="/js/firebase-config.js"></script>
-
   </head>
 
   <body class="row">
@@ -19,7 +18,7 @@
           <a href="/" class="brand-logo left main-nav-content" style="padding-left: 20px"><i class="material-icons">store</i>My Shop</a>
           <ul class="right main-nav-content">
             <li><a href="" id="search-icon"><i class="material-icons">search</i></a></li>
-            <li><a href=""><i class="material-icons">account_circle</i></a></li>
+            <li><a href="/login.html" id="nav-user"><i class="material-icons">account_circle</i></a></li>
           </ul>
           <form id="search-form" class="hide">
             <div class="input-field">
@@ -36,7 +35,7 @@
     <div class="container col m6 offset-m3 s12 section">
       <br>
       <div class="row">
-        <form action="" class="col s12 m6">
+        <form action="" class="col s12 m6" id="login-form">
           <div class="center-align">
             <h4>Login</h4>
           </div>
@@ -52,10 +51,9 @@
           </div>
 
           <button class="btn waves-effect waves-light deep-orange darken-4" type="submit" name="action">Login</button>
-          
         </form>
 
-        <form action="" class="col s12 m6">
+        <form action="" class="col s12 m6" id="create-account-form">
           <div class="center-align">
             <h4>Create Account</h4>
           </div>
@@ -80,12 +78,13 @@
 
       <div class="center-align">
         <h5>- or -</h5>
-        <a href=""><img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" alt="" width="300px"></a>
+        <a id="google-login"><img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" alt="" width="300px"></a>
       </div>
     </div>
 
     <script src="/js/jquery.js"></script>
     <script src="/js/materialize.min.js"></script>
     <script src="/js/nav.js"></script>
+    <script src="/js/login.js"></script>
   </body>
 </html>
