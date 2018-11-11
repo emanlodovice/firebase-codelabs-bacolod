@@ -35,43 +35,44 @@
       <div class="center-align">
         <h4>Add Product</h4>
       </div>
+      <form action="" class="col s12">
+        <div class="row">
+          <!-- Start Image Section -->
+          <div class="col m5 s12">
+            <img src="/images/g.jpg" width="100%">
+            <div class="center-align">
+              <label for="image" class="btn waves-effect waves-light">
+                Upload <i class="material-icons right">add_a_photo</i>
+              </label>
+              <input type="file" id="image" class="hide">
+            </div>
+          </div>
+          <!-- End Image Section -->
 
-      <div class="row">
-        <!-- Start Image Section -->
-        <div class="col m5 s12">
-          <img src="/images/g.jpg" width="100%">
-          <div class="center-align">
-            <label for="image" class="btn waves-effect waves-light">
-              Upload <i class="material-icons right">add_a_photo</i>
-            </label>
-            <input type="file" id="image" class="hide">
+          <!-- Start About Section -->
+          <div class="col m7 s12">
+            <div class="col s12">
+              <div class="input-field col s12">
+                <input id="name" type="text" class="validate">
+                <label for="name">Name</label>
+              </div>
+              <div class="input-field col s12">
+                <textarea name="description" id="description" class="materialize-textarea"></textarea>
+                <label for="description">Description</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="cost" type="number" class="validate" step="1" min="0">
+                <label for="cost">Price</label>
+              </div>
+            </div>
           </div>
         </div>
-        <!-- End Image Section -->
-
-        <!-- Start About Section -->
-        <div class="col m7 s12">
-          <form action="" class="col s12">
-            <div class="input-field col s12">
-              <input id="name" type="text" class="validate">
-              <label for="name">Name</label>
-            </div>
-            <div class="input-field col s12">
-              <textarea name="description" id="description" class="materialize-textarea"></textarea>
-              <label for="description">Description</label>
-            </div>
-            <div class="input-field col s12">
-              <input id="cost" type="number" class="validate" step="1" min="0">
-              <label for="cost">Price</label>
-            </div>
-          </form>
-        </div>
         <!-- End About Section -->
-      </div>
 
-      <div class="center-align">
-        <a class="waves-effect waves-light btn-large teal darken-2" href="/checkout.html"><i class="material-icons left">add_shopping_cart</i>Create</a>
-      </div>
+        <div class="center-align">
+          <button class="waves-effect waves-light btn-large teal darken-2"><i class="material-icons left">add_shopping_cart</i>Create</button>
+        </div>
+      </form>
     </div>
 
     <script src="/js/jquery.js"></script>
