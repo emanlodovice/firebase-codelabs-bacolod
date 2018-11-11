@@ -72,11 +72,11 @@ function checkout() {
             }).then(function(order) {
                 order.onSnapshot(function(updatedOrder) {
                     var newOrderData = updatedOrder.data();
-                    console.log(newOrderData);
                     if (newOrderData.paypalRedirectUrl) {
                         window.location = newOrderData.paypalRedirectUrl;
-                    } else if (newOrderData.status == 2) {
+                    } else if (newOrderData.status === 'fail') {
                         M.toast({html: 'Failed to process order.', classes: 'rounded'});
+                        lock = false;
                         $('#pay').removeClass('hide');
                         $('#loader').addClass('hide');
                     }
