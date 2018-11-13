@@ -6,6 +6,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script src="/js/firebase-config.js"></script>
   </head>
 
   <body class="row">
@@ -16,7 +18,7 @@
           <a href="/" class="brand-logo left main-nav-content" style="padding-left: 20px"><i class="material-icons">store</i>My Shop</a>
           <ul class="right main-nav-content">
             <li><a href="" id="search-icon"><i class="material-icons">search</i></a></li>
-            <li><a href="/login.html"><i class="material-icons">account_circle</i></a></li>
+            <li><a href="/login.html" id="nav-user"><i class="material-icons">account_circle</i></a></li>
           </ul>
           <form id="search-form" class="hide">
             <div class="input-field">
@@ -35,54 +37,29 @@
       <div class="center-align">
         <h4>Orders</h4>
       </div>
-      <div class="row">
-        <div class="col s12 offset-m1 m10">
-          <div class="col s4 m2">
-            <img src="/images/g.jpg" alt="" width="100%">
-          </div>
-          <div class="col s8 m7">
-            <h5>Product 1</h5>
-            <h6>P 100.00 for 4 items</h6>
-            <p>445 Mount Eden Road, Mount Eden, Auckland</p>
-          </div>
-          <div class="col s12 m3 center-align">
-            <a class="waves-effect waves-light btn-large red darken-1"><i class="material-icons left">add_shopping_cart</i>Fulfill</a>
-          </div>
-        </div>
-
-        <div class="col s12 offset-m1 m10">
-          <div class="col s4 m2">
-            <img src="/images/g.jpg" alt="" width="100%">
-          </div>
-          <div class="col s8 m7">
-            <h5>Product 1</h5>
-            <h6>P 100.00 for 4 items</h6>
-            <p>445 Mount Eden Road, Mount Eden, Auckland</p>
-          </div>
-          <div class="col s12 m3 center-align">
-            <a class="waves-effect waves-light btn-large red darken-1"><i class="material-icons left">add_shopping_cart</i>Fulfill</a>
-          </div>
-        </div>
-
-        <div class="col s12 offset-m1 m10">
-          <div class="col s4 m2">
-            <img src="/images/g.jpg" alt="" width="100%">
-          </div>
-          <div class="col s8 m7">
-            <h5>Product 1</h5>
-            <h6>P 100.00 for 4 items</h6>
-            <p>445 Mount Eden Road, Mount Eden, Auckland</p>
-          </div>
-          <div class="col s12 m3 center-align">
-            <a class="waves-effect waves-light btn-large red darken-1"><i class="material-icons left">add_shopping_cart</i>Fulfill</a>
-          </div>
-        </div>
+      <div class="row" id="orders">
+        
       </div>
       <!-- End List of Orders -->
 
+      <br>
+      <div class="center-align" id="loader">
+        <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Start Load More -->
       <div class="center-align">
-        <a class="waves-effect waves-light btn-large teal darken-2"><i class="material-icons left">view_headline</i>See More</a>
+        <a class="waves-effect waves-light btn-large teal darken-2 hide" id="see-more"><i class="material-icons left">view_headline</i>See More</a>
       </div>
       <!-- End Load More -->
     </div>
@@ -90,5 +67,7 @@
     <script src="/js/jquery.js"></script>
     <script src="/js/materialize.min.js"></script>
     <script src="/js/nav.js"></script>
+    <script src="/js/firestore-config.js"></script>
+    <script src="/js/orders.js"></script>
   </body>
 </html>
