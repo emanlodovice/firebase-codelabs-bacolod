@@ -60,3 +60,14 @@ function browseProducts() {
 }
 
 $(document).ready(browseProducts);
+
+$(window).on('auth', function(e, user) {
+    if (user) {
+        var adminsCollection = firebase.firestore().collection('admins');
+        adminsCollection.doc(user.uid).get().then(function(snapshot) {
+            if (snapshot.exists) {
+                $('#add-product').removeClass('hide');
+            }
+        });
+    }
+});

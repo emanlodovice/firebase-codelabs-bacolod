@@ -90,3 +90,16 @@ function guid() {
   }
   return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
 }
+
+$(window).on('auth', function(e, user) {
+    if (user) {
+        var adminsCollection = firebase.firestore().collection('admins');
+        adminsCollection.doc(user.uid).get().then(function(snapshot) {
+            if (!snapshot.exists) {
+                window.location = '/';
+            }
+        });
+    } else {
+        window.location = '/';
+    }
+});

@@ -72,7 +72,7 @@ function orders(user, isAdmin) {
                     '<h6>P ' + cost.toFixed(2) + ' for ' + order.quantity + ' items</h6>' +
                     '<p>' + order.firstName + ' ' + order.lastName +'</p>' +
                     '<p>' + order.address +'</p>';
-            if (isAdmin && order.status) {
+            if (order.status) {
                 template += '<p>' + order.status + '</p>'
             }
             template += '</div>';
