@@ -46,11 +46,24 @@ function orders(user, isAdmin) {
         });
     })();
 
+    (function enableFulfill() {
+        $(document).on('click', '.fulfill', function(e) {
+            var button = $(this);
+            var orderId = button.data('id');
+            ordersCollection.doc(orderId).set({
+                'status': 'done'
+            }, {merge: true}).then(function(snapshot) {
+                button.remove();
+                M.toast({html: 'Order Fulfilled', classes: 'rounded'});
+            });
+        });
+    })();
+
     function renderOrder(orderId, order) {
         var productPromise = productCollection.doc(order.product).get().then(function(snapshot) {
             var product = snapshot.data();
             var cost = parseFloat(product.price) * parseFloat(order.quantity);
-            var template = '<div class="col s12 offset-m1 m10">' +
+            var template = '<div class="col s12 offset-m1 m10" id="' + orderId + '">' +
                   '<div class="col s4 m2">' +
                     '<img src="' + product.imageUrl + '" alt="" width="100%">' +
                   '</div>' +
@@ -65,7 +78,7 @@ function orders(user, isAdmin) {
             template += '</div>';
             if (isAdmin && order.status == 'pending') {
                 template += '<div class="col s12 m3 center-align">' +
-                    '<a class="waves-effect waves-light btn-large red darken-1"><i class="material-icons left">add_shopping_cart</i>Fulfill</a>' +
+                    '<a class="waves-effect waves-light btn-large red darken-1 fulfill" data-id="' + orderId + '"><i class="material-icons left">add_shopping_cart</i>Fulfill</a>' +
                   '</div>';
             }
             template += '</div>';
